@@ -22,32 +22,32 @@ namespace ToDoList.Logic
 
         public List<ToDoTask> FindTask(string query)
         {
-            throw new NotImplementedException();
+            return taskList.Where(x => x.Title.Contains(query) || x.Description.Contains(query)).ToList();
         }
 
         public List<ToDoTask> FindTask(string query, Objectivity.CSharp.Interfaces.TaskStatus status, DateTime date)
         {
-            throw new NotImplementedException();
+            return taskList.Select(x => x.)
         }
 
         public List<ToDoTask> GetAllTasks()
         {
-            throw new NotImplementedException();
+            return taskList.Where(x => x.Title != string.Empty).ToList();
         }
 
         public List<ToDoTask> GetTaskDueToday()
         {
-            throw new NotImplementedException();
+            return taskList.Where(x => x.DueDate == DateTime.Today).ToList();
         }
 
         public List<ToDoTask> GetTasks(DateTime date)
         {
-            throw new NotImplementedException();
+            return taskList.Where(x => x.CreatedDate == date || x.DoneDate == date || x.DueDate == date || x.ModifiedDate == date).ToList();
         }
 
         public List<ToDoTask> GetTasks(DateTime start, DateTime end)
         {
-            throw new NotImplementedException();
+            return taskList.Where(x => x.CreatedDate == start && x.DoneDate == end).ToList();
         }
 
         public void UpdateTask(ToDoTask task)
