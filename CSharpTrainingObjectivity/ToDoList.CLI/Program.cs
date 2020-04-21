@@ -1,18 +1,15 @@
-﻿using Objectivity.CSharp.Interfaces;
+﻿using System;
+using Objectivity.CSharp.Interfaces;
 using Objectivity.CSharp.Interfaces.Properties;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ToDoList.Logic;
 
 namespace ToDoList.CLI
 {
-    class Program
+    public class Program
     {
-        static ToDoListEngineInterface engine;
-        static void Main(string[] args)
+        private static ToDoListEngineInterface engine;
+
+        private static void Main(string[] args)
         {
             engine = new ToDoListEngine();
             Console.WriteLine("To jest moja todo lista");
@@ -20,9 +17,9 @@ namespace ToDoList.CLI
             Console.ReadKey();
         }
 
-        static void InitTestData(int numberOfElements)
+        private static void InitTestData(int numberOfElements)
         {
-            //petle
+            // petle //
             Random rand = new Random();
 
             for (int i = 0; i < numberOfElements; i++)
