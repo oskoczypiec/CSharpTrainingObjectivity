@@ -29,7 +29,7 @@ namespace ToDoList.Logic
 
         public List<ToDoTask> FindTask(string query, Objectivity.CSharp.Interfaces.TaskStatus status, DateTime date)
         {
-            throw new NotImplementedException();
+            return this.taskList.Where(x => x.Title.Contains(query) || x.Description.Contains(query) || x.Status == status || x.CreatedDate == date).ToList();
         }
 
         public List<ToDoTask> GetAllTasks()
